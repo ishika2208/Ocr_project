@@ -1,0 +1,239 @@
+.photo-editor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.919); /* Set the background color to black */
+  overflow: auto; /* Set the overflow to auto to show the scrollbar */
+}
+
+.photo-editor {
+  position: relative;
+}
+
+.canvas {
+  position: relative;
+}
+
+.text-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.draggable-textbox {
+  position: absolute;
+  cursor: move;
+  border: 1px dashed #000;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.photo-editor::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+.photo-editor::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.338); /* Set the background color of the scrollbar track to black */
+}
+
+.photo-editor::-webkit-scrollbar-thumb {
+  background-color: #888888; /* Set the background color of the scrollbar thumb */
+}
+
+  .canvas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .image-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px; /* Adjust the width as needed */
+    height: 400px; /* Adjust the height as needed */
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  
+  .empty-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    background-color: #f0f0f0;
+  }
+  
+  .empty-preview p {
+    margin: 0;
+    font-size: 16px;
+    color: #888888;
+  }
+  
+  .toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .toolbar label {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .toolbar label:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .toolbar label span {
+    font-size: 14px;
+  }
+  
+  .toolbar label input[type="file"] {
+    display: none;
+  }
+  
+  .toolbar label input[type="file"] + span {
+    cursor: pointer;
+  }
+  
+  .toolbar label input[type="file"]:focus + span {
+    outline: 2px solid #61dafb;
+  }
+  
+  .toolbar label input[type="file"]::file-selector-button {
+    visibility: hidden;
+  }
+  
+  .toolbar label input[type="file"]::before {
+    content: 'Choose File';
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #61dafb;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .toolbar label input[type="file"]:hover::before {
+    background-color: #45b6e6;
+  }
+  
+  .toolbar label input[type="file"]:focus::before {
+    outline: 2px solid white;
+  }
+  
+  .language-dropdown {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .language-dropdown label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .language-dropdown select {
+    width: 150px;
+  }
+  .lefteditor{position: absolute; left: 15px;}
+  .upper-canvas {width: 688px!important;}
+  .tui-image-editor-main-container{background-color: #cccccc!important;}
+  @media (max-width: 768px) {
+    .canvas {
+      margin-bottom: 10px;
+    }
+  
+    .image-preview {
+      margin-bottom: 10px;
+    }
+  
+    .empty-preview {
+      height: 200px;
+    }
+  
+    .empty-preview p {
+      font-size: 14px;
+    }
+  
+    .toolbar {
+      margin-bottom: 10px;
+    }
+  
+    .toolbar label {
+      padding: 8px 16px;
+      margin-bottom: 8px;
+    }
+  
+    .toolbar label input[type="file"]::before {
+      padding: 4px 8px;
+    }
+  }
+  
+  .element.style {
+      height: 500px;
+      width: 700px;
+      top: -75px;
+      left: 0px;
+  }
+
+  .tui-image-editor-canvas-container{
+    max-width: 600px;
+    max-height: 450px;
+    
+  }
+
+  .tui-image-editor-submenu-style{
+
+    background: linear-gradient(45deg, #4170ce, #d95252);
+  }
+  .tui-image-editor-container .tui-image-editor-help-menu.top{
+    height: 40px;
+    top: 24px;
+  }
+  
+  
+  .photo-editor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .canvas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-start;
+    
+    margin-left: 15px; /* Adjust the margin as needed */
+  }
+  
+  .button-container button {
+    margin-right: 10px; /* Adjust the spacing between buttons */
+    
+  }
+  
