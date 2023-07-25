@@ -1,3 +1,4 @@
+#Usage: python Blank.py <input_image_path> <source_language> <output_image_path>
 import sys
 import os
 from PIL import Image
