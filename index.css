@@ -160,6 +160,7 @@ body {
   .image-container {
     display: flex;
     gap: 20px;
+    padding: 0 15px;
   }
   
   .image-container > div {

@@ -93,84 +93,84 @@ const Translator = () => {
 
   const canvasRef = useRef(null);
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   const imageUrl = 'https://www.htmlgoodies.com/wp-content/uploads/2021/04/rotate.png';
+    const imageUrl = 'https://www.htmlgoodies.com/wp-content/uploads/2021/04/rotate.png';
 
-  //   const img = new Image();
-  //   img.onload = function() {
-  //     const width = img.naturalWidth;
-  //     const height = img.naturalHeight;
+    const img = new Image();
+    img.onload = function() {
+      const width = img.naturalWidth;
+      const height = img.naturalHeight;
     
-  //     const canvas = new fabric.Canvas(canvasRef.current, {
-  //       width: width,
-  //       height: height,
-  //     });
+      const canvas = new fabric.Canvas(canvasRef.current, {
+        width: width,
+        height: height,
+      });
   
-  //     // Add background image
-  //     fabric.Image.fromURL('https://www.htmlgoodies.com/wp-content/uploads/2021/04/rotate.png', (img) => {
-  //       canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
-  //         scaleX: canvas.width / img.width,
-  //         scaleY: canvas.height / img.height,
-  //       });
-  //     });
+      // Add background image
+      fabric.Image.fromURL('https://www.htmlgoodies.com/wp-content/uploads/2021/04/rotate.png', (img) => {
+        canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
+          scaleX: canvas.width / img.width,
+          scaleY: canvas.height / img.height,
+        });
+      });
 
-  //     // Create the polygon
+      // Create the polygon
 
-  //     // const polygon1 = [52,
-  //     //   37,
-  //     //   208,
-  //     //   127,
-  //     //   192,
-  //     //   154,
-  //     //   36,
-  //     //   64];
-  //     // const text1 = 'Rotated text';
-  //     // const font1 = '70';
-  //     // const color1 = 'red';
-  //     // const bend1 = 0;
+      // const polygon1 = [52,
+      //   37,
+      //   208,
+      //   127,
+      //   192,
+      //   154,
+      //   36,
+      //   64];
+      // const text1 = 'Rotated text';
+      // const font1 = '70';
+      // const color1 = 'red';
+      // const bend1 = 0;
   
-  //     // createTextObject(canvas, polygon1, text1, font1, color1, bend1);
+      // createTextObject(canvas, polygon1, text1, font1, color1, bend1);
     
-  //     // Background image URL
-  //   // const backgroundImageUrl = 'https://www.htmlgoodies.com/wp-content/uploads/2021/04/rotate.png';
+      // Background image URL
+    // const backgroundImageUrl = 'https://www.htmlgoodies.com/wp-content/uploads/2021/04/rotate.png';
 
-  //   // // Draw text on canvas with the background image and provided polygon coordinates and properties
-  //   // drawTextOnCanvas(canvas, text1, polygon1, font1, color1, backgroundImageUrl);
+    // // Draw text on canvas with the background image and provided polygon coordinates and properties
+    // drawTextOnCanvas(canvas, text1, polygon1, font1, color1, backgroundImageUrl);
 
-  //     // Polygon coordinates
-  //     const polygonCoords = [52, 37, 208, 127, 192, 154, 36, 64];
-  //     // Text properties
-  //     const text = 'Rotated text';
-  //     const fontSize = (64-37);
-  //     const color = 'red';
+      // Polygon coordinates
+      const polygonCoords = [52, 37, 208, 127, 192, 154, 36, 64];
+      // Text properties
+      const text = 'Rotated text';
+      const fontSize = (64-37);
+      const color = 'red';
   
-  //     // Calculate the center of the polygon
-  //     const centerX = (polygonCoords[0] + polygonCoords[4]) / 2;
-  //     const centerY = (polygonCoords[1] + polygonCoords[5]) / 2;
+      // Calculate the center of the polygon
+      const centerX = (polygonCoords[0] + polygonCoords[4]) / 2;
+      const centerY = (polygonCoords[1] + polygonCoords[5]) / 2;
   
-  //     // Set the font size and color
-  //     const textObj = new fabric.Text(text, {
-  //       left: centerX,
-  //       top: centerY,
-  //       fontSize: fontSize,
-  //       fill: color,
-  //       originX: 'center', // Set the origin to the center of the text
-  //       originY: 'center',
-  //     });
+      // Set the font size and color
+      const textObj = new fabric.Text(text, {
+        left: centerX,
+        top: centerY,
+        fontSize: fontSize,
+        fill: color,
+        originX: 'center', // Set the origin to the center of the text
+        originY: 'center',
+      });
   
-  //     // Calculate the rotation angle based on the slope of the polygon sides
-  //     const angleRadians = Math.atan2(polygonCoords[5] - polygonCoords[1], polygonCoords[4] - polygonCoords[0]);
+      // Calculate the rotation angle based on the slope of the polygon sides
+      const angleRadians = Math.atan2(polygonCoords[5] - polygonCoords[1], polygonCoords[4] - polygonCoords[0]);
   
-  //     // Rotate the text
-  //     textObj.set('angle', angleRadians * (180 / Math.PI)); // Convert radians to degrees
+      // Rotate the text
+      textObj.set('angle', angleRadians * (180 / Math.PI)); // Convert radians to degrees
   
-  //     canvas.add(textObj);
+      canvas.add(textObj);
 
-  //   };
-  //   img.src = imageUrl;
+    };
+    img.src = imageUrl;
    
-  // }, []);
+  }, []);
 
   const buttonStyle = {
     width: '200px', // Set the desired width here
@@ -253,43 +253,11 @@ const Translator = () => {
               response.data.result.translated_text[index].polygon[3].y
             ];
             const text1 = item.content;
-            const font1 = (parseInt(response.data.result.translated_text[index].polygon[3].y) - parseInt(response.data.result.translated_text[index].polygon[0].y))-5;
-            const color1 = item?.color ? item?.color : 'black';
-            const fontWeight1 = item?.fontWeight ? item?.fontWeight : 'normal';
-            const fontFamily1 = item?.similarFontFamily ? item?.similarFontFamily : '';
-            
+            const font1 = '20';
+            const color1 = 'red';
+            const bend1 = 0;
+        
             // createTextObject(canvas, polygon1, text1, font1, color1, bend1);
-
-             // Calculate the center of the polygon
-              const centerX = (polygon1[0] + polygon1[4]) / 2;
-              const centerY = (polygon1[1] + polygon1[5]) / 2;
-          
-              // Set the font size and color
-              const textObj = new fabric.Text(text1, {
-                left: centerX,
-                top: centerY,
-                fontSize: font1,
-                fontWeight: fontWeight1,
-                fontFamily: fontFamily1,
-                fill: color1,
-                originX: 'center', // Set the origin to the center of the text
-                originY: 'center',
-              });
-          
-              // Calculate the rotation angle based on the slope of the polygon sides
-              const angleRadians = Math.atan2(polygon1[5] - polygon1[1], polygon1[4] - polygon1[0]);
-          
-              if(angleRadians < 1)
-              {
-                  textObj.set('angle', 0 * (180 / Math.PI));
-              }
-              else
-              {
-                  textObj.set('angle', angleRadians * (180 / Math.PI));
-              }
-              // Rotate the text
-              // Convert radians to degrees
-              canvas.add(textObj);
 
           });
     
